@@ -1,0 +1,212 @@
+\documentclass{scrreprt}
+\usepackage{listings}
+\usepackage{underscore}
+\usepackage[bookmarks=true]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\hypersetup{
+    bookmarks=false,    % show bookmarks bar?
+    pdftitle={Software Requirement Specification},    % title
+    pdfauthor={Alina, Urooj, Anjiya, Aiman}
+    pdfsubject={TeX and LaTeX},                        % subject of the document
+   %% pdfkeywords={TeX, LaTeX, graphics, images}, % list of keywords
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=blue,       % color of internal links
+    citecolor=black,       % color of links to bibliography
+    filecolor=black,        % color of file links
+    urlcolor=purple,        % color of external links
+    linktoc=page            % only page is linked
+}%
+\def\myversion{1.0 }
+\date{}
+%\title{%
+
+%}
+\usepackage{hyperref}
+\begin{document}
+
+\begin{flushright}
+    \rule{16cm}{5pt}\vskip1cm
+    \begin{bfseries}
+        \Huge{SOFTWARE REQUIREMENTS\\ SPECIFICATION}\\
+        \vspace{1.9cm}
+        for\\
+        \vspace{1.9cm}
+        Fast Point Tracking System\\
+        \vspace{1.5cm}
+        Prepared by Alina Hassan, Urooj Anwar, Anjiya  Nawaz Nathani and Aiman\\
+        \vspace{1.5cm}
+        \today\\
+    \end{bfseries}
+\end{flushright}
+
+\tableofcontents
+
+
+\chapter{Introduction}
+
+\section{Purpose}
+The FPT is a mobile based application which includes user interaction. Our project is going to be an android application. Our aim is to provide convenient communication environment for the users; drivers and students.
+
+\section{Document Conventions}
+The high level requirements will be represented in bold letters to make it more prominent.
+
+\section{Intended Audience and Reading Suggestions}
+The intended audience of FPT(Fast Point Tracking System) are faculty of Fast, point drivers, students and transport manager.  
+
+\section{Project Scope}
+The students will be enabled to track the specified point’s location through the application and communicate with student driver portal app via the messaging system and pick their path. After mutual agreement with each other, they record the transportation information to the system.
+
+\section{References}
+We have analyzed the working of existing tracking systems such as Careem and Uber. You can find more information about these two systems which we have refered to in the following links.
+Careem: https://www.careem.com/en-pk/
+Uber: https://www.uber.com/pk/ur/
+
+
+\chapter{Overall Description}
+ 
+\section{Product Perspective}
+Being a student at Fast Nuces we have missed our points several times. To overcome this problem we have got the idea to make a system which can tell us the location of our specific point. So we can request the driver to stop the point or reach at our stop according to the arrival time of our point.
+
+\section{Product Functions}
+User will check the location of his/her point.
+User will be able to message the point driver.
+User will be able to know the arrival time of their point.
+Driver will update the location.
+Driver will notify the student and faculty of their point.
+Transport administrator can check the location of any point.
+Transport administrator can add new point.
+Transport administrator can assign the driver to the point.
+
+\section{User Classes and Characteristics}
+The main classes of FPT system will be: Student, Faculty, Point, Driver, Administrator.
+
+\section{Operating Environment}
+Our mobile application; FPT system will be supported by Android version 4.0 or above. 
+
+\section{Design and Implementation Constraints}
+We have never worked on android application before so we have to learn the whole android studio and its functionality in the limited time. Database integration with android studio can be a little challenging because of different android versions.
+
+\section{User Documentation}
+There will be a help section in our android application where user manual will be provided along with frequently asked questions.
+
+\section{Assumptions and Dependencies}
+Our system will use Google Map API for the retrieval of location information, MySQL DBMS to store and manipulate the data, Android
+studio for developing an android app and GUI to interact with users.
+If there will be some error in Google Map API than our system will not give accurate results.
+
+
+\chapter{External Interface Requirements}
+
+\section{User Interfaces}
+Home page will show location of the point along with the arrival time. The user will have the profile and he will have an option to change the point number. The driver will have an option to send notification in case of any issue. There will be the chat option in navigation. 
+
+\section{Hardware Interfaces}
+Not applicable in our FPT system.
+
+\section{Software Interfaces}
+MySQL database management system is used for that purpose and it has
+a satisfying open source user interface which displays table and rows in a well formatted form for developers to create and manage the whole database. The data will be fetched from mysql(DBMS) and display the queries on android studio by using PHP.
+
+\section{Communications Interfaces}
+The system must contain location sharing via GPRS and user should have internet facility all time.
+ 
+
+\chapter{System Features}
+
+
+\section{Register}
+
+\subsection{Description and Priority}
+While registering on our app user(student and faculty) have to provide their nu-email, point number and password. The driver will register using their assigned driver number and password. 
+
+\subsection{Stimulus/Response Sequences}
+Refer to the use case diagram which will be at the end of the document. 
+
+\subsection{Functional Requirements}
+User need to have assigned email id to register in our system.
+
+\section{Login}
+\subsection{Description and Priority}
+Before using any feature the user should first login to our system.  
+
+\subsection{Stimulus/Response Sequences}
+Refer to the use case diagram which will be at the end of the document. 
+
+\subsection{Functional Requirements}
+User need to first register and the system will authorize the user before login.
+
+\section{Track}
+\subsection{Description and Priority}
+We will use Google map API to know the exact current location of the point.  
+
+\subsection{Stimulus/Response Sequences}
+Refer to the use case diagram which will be at the end of the document. 
+
+\subsection{Functional Requirements}
+User need to first connect to the internet and then login to the system in order to track.
+
+\section{Find Arrival Time}
+\subsection{Description and Priority}
+
+We will use Google map API to know the exact current location of the point. The Google map API show the arrival time of point according to the distance between the current location of student and the current location of point. 
+
+\subsection{Stimulus/Response Sequences}
+Refer to the use case diagram which will be at the end of the document. 
+
+\subsection{Functional Requirements}
+User need to first connect to the internet and then login to the system in order to track and also the location of your android phone should be enabled .
+
+\section{Update Point Driver}
+
+\subsection{Description and Priority}
+
+The point administrator will assign the point drivers to the points. and also update the point driver.Their is association between the point no and point driver and when the administrator assign the point driver it will save in the database.
+
+\subsection{Stimulus/Response Sequences}
+Refer to the use case diagram which will be at the end of the document. 
+
+\subsection{Functional Requirements}
+User need to first connect to the internet and then login to the system and then their is a assign option in the navigation bar and through this we can assign the driver to the point.
+
+\chapter{Other Nonfunctional Requirements}
+
+\section{Performance Requirements}
+The location and arrival time of the point will continuously change 
+in real time so we have to make sure that the result is accurate.
+
+\section{Safety Requirements}
+We should make sure that no outsider other than the authorized user can see the location of the point  and the driver information.
+
+\section{Security Requirements}
+We should make sure that the information received by the administrator is not changed or accessed by the outsiders.
+
+\section{Software Quality Attributes}
+Our system should be reliable or else students can be late to their classes. The system should always be accessible by the users.The system should always give accurate results(location and time) or else students can miss their points.
+
+\section{Business Rules}
+Not applicable to our FPT system.
+
+
+\chapter{Other Requirements}
+
+\section{Appendix A: Glossary}
+FPT: Fast Point Tracking.
+Google Map API:This will give us the location of our specific point.
+Android Studio:Android Studio is the platform which we are using for making the FTP mobile app.
+
+\section{Appendix B: Analysis Models}
+
+\subsection{Class Diagram}
+
+\includegraphics[height=10cm ,width=17cm]{images/classdiagram.png}
+
+\subsubsection{Use Case}
+
+\includegraphics[height=10cm ,width=17cm]{images/usecase.jpg}
+
+\section{Appendix C: To Be Determined List}
+Not included in our project.
+
+\end{document}
